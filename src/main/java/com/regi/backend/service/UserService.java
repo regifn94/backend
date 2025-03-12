@@ -31,4 +31,15 @@ public class UserService {
         Optional<User> user = userRepository.findById(id);
         user.ifPresent(userRepository::delete);
     }
+    public User update(User user){
+        // check di database if user exist
+        // if exist then update
+        // else throw error
+        return null;
+    }
+    /**
+     * todo
+     * buat method update di service
+     * buat endpoint di controller
+     * */
 }
