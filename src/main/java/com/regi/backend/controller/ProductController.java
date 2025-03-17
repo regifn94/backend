@@ -2,10 +2,9 @@ package com.regi.backend.controller;
 
 import com.regi.backend.entity.Product;
 import com.regi.backend.service.ProductService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/product")
@@ -20,5 +19,15 @@ public class ProductController {
     @PostMapping("/save")
     public Object create(@RequestBody Product product){
         return productService.create(product);
+    }
+
+    @GetMapping("/detail/{id}")
+    public Product detail(@PathVariable("id") Long id){
+        return productService.detail(id);
+    }
+
+    @GetMapping("/list")
+    public List<Product> listProduct(){
+        return productService.listProduct();
     }
 }
