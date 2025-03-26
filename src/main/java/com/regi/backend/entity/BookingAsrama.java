@@ -2,19 +2,21 @@ package com.regi.backend.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 @Entity
-@Table(name = "user")
-public class User {
+@Table
+public class BookingAsrama {
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private Integer age;
-    private String email;
-    private String password;
+    private String namaMahasiswa;
+
+    private String nim;
 }
