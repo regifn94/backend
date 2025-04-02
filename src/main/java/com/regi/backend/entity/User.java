@@ -17,4 +17,8 @@ public class User {
     private Integer age;
     private String email;
     private String password;
+
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    private String imageBase64;
 }
